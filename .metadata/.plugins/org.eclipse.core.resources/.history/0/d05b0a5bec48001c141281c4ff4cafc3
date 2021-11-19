@@ -1,0 +1,29 @@
+package pageObjects;
+
+import java.io.IOException;
+import java.util.logging.Logger;
+
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import reusableComponents.base;
+
+public class TestCaseTwoTesting extends base {
+	
+	public static Logger log = Logger.getLogger(base.class.getName());
+	
+	@BeforeTest
+	public void browserOpen() throws IOException
+	{
+		driver=initiateDriver();
+		driver.get(prop.getProperty("url"));
+	}
+	
+	@Test
+	public void findResort()
+	{
+		driver.get(prop.getProperty("url"));
+		
+	}
+
+}

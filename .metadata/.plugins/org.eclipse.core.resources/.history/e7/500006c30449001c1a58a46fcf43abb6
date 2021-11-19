@@ -1,0 +1,71 @@
+package pageObjects;
+
+import java.io.IOException;
+import java.util.Set;
+
+import org.apache.log4j.Logger;
+import org.testng.Assert;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+import org.openqa.selenium.Keys;
+
+import reusableComponents.base;
+import uiStores.TestCaseOne;
+import uiStores.TestCaseThree;
+
+public class TestCaseThreeTesting extends base{
+	
+public static Logger log = Logger.getLogger(base.class.getName());
+	
+	@BeforeTest
+	public void browserOpen() throws IOException
+	{
+		driver=initiateDriver();
+		driver.get(prop.getProperty("url"));
+	}
+	
+	@Test
+	public void Meeting() throws InterruptedException
+	{
+		TestCaseOne t1=new TestCaseOne(driver);
+		t1.getPopup().click();
+		Thread.sleep(900);
+		TestCaseThree t3=new TestCaseThree(driver);
+		
+		t3.getExponov().sendKeys(Keys.chord(Keys.CONTROL, Keys.ENTER));
+		Set<String> ab = driver.getWindowHandles();
+		Iterator<String> it = ab.iterator();
+		String parentId = it.next();
+		String childid = it.next();
+		driver.switchTo().window(childid);
+		Thread.sleep(2000);
+		tc.getFindOutMore().click();
+		String title = driver.getTitle();
+		if (title.contains("Meetings and Events")) {
+			System.out.println("Present");
+			log.info("Desired item found in  page");
+		}
+		driver.close();
+		driver.switchTo().window(parentId);
+		
+		log.info("Entered onto url");
+		t3.getExponov().click();
+		Thread.sleep(900);
+		log.info("Clicked on Experience Novotel");
+		t3.getMeeting().click();
+		Thread.sleep(900);
+		log.info("clicked on meetings");
+		Assert.assertTrue(driver.getTitle().contains("Meetings and Events"));
+		log.info("Title matched");
+		log.info("Testcase3 Passed successfully");
+		
+	}
+	
+	@AfterTest
+	public void closeBrowser()
+	{
+		driver.close();
+	}
+
+}

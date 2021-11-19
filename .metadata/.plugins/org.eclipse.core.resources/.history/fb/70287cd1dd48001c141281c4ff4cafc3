@@ -1,0 +1,18 @@
+package uiStores;
+
+import java.io.IOException;
+
+import org.openqa.selenium.WebDriver;
+
+import reusableComponents.base;
+
+public class TestCaseOneTesting extends base {
+	
+	
+	public void HotelInBengaluru() throws IOException
+	{
+		
+		driver=initiateDriver();
+		driver.get(prop.getProperty("url"));
+	}
+}

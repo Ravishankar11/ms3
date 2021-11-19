@@ -1,0 +1,19 @@
+package uiStores;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import reusableComponents.base;
+
+public class TestCaseThree extends base {
+
+public WebDriver driver;
+	
+	public TestCaseThree(WebDriver driver)
+	{
+		this.driver=driver;
+	}
+	
+	By expnovo=By.xpath("//a[text()='Experience Novotel']");
+
+}

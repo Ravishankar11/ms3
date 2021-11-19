@@ -1,0 +1,9 @@
+package uiStores;
+
+import reusableComponents.base;
+
+public class TestCaseTwo extends base{
+	
+	public WebDriver driver;
+
+}

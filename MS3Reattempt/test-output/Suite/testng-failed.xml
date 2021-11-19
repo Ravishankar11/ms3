@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="none" name="Failed suite [Suite]">
+  <test parallel="none" name="Test(failed)">
+    <classes>
+      <class name="pageObjects.TestCaseOneTesting">
+        <methods>
+          <include name="HotelInBengaluru"/>
+          <include name="closeBrowser"/>
+          <include name="ReadExcelData"/>
+        </methods>
+      </class> <!-- pageObjects.TestCaseOneTesting -->
+      <class name="pageObjects.TestCaseThreeTesting">
+        <methods>
+          <include name="browserOpen"/>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- pageObjects.TestCaseThreeTesting -->
+      <class name="pageObjects.TestCaseTwoTesting">
+        <methods>
+          <include name="closeBrowser"/>
+          <include name="browserOpen"/>
+        </methods>
+      </class> <!-- pageObjects.TestCaseTwoTesting -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

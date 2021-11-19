@@ -1,0 +1,14 @@
+package uiStores;
+
+import org.openqa.selenium.WebDriver;
+
+public class TestCaseOneTesting {
+	
+	public WebDriver driver;
+	
+	public TestCaseOneTesting(WebDriver driver)
+	{
+		this.driver=driver;
+	}
+
+}

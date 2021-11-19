@@ -1,0 +1,14 @@
+package uiStores;
+
+import org.openqa.selenium.WebDriver;
+
+public class TestCaseThree extends base {
+
+public WebDriver driver;
+	
+	public TestCaseThree(WebDriver driver)
+	{
+		this.driver=driver;
+	}
+
+}

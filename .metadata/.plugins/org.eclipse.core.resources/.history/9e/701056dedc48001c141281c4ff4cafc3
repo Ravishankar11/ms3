@@ -1,0 +1,16 @@
+package pageObjects;
+import org.openqa.selenium.WebDriver;
+
+import reusableComponents.base;
+
+public class TestCaseOne extends base
+{
+	public WebDriver driver;
+	
+	
+	
+	public void BookHotelInBengaluru()
+	{
+		
+	}
+}

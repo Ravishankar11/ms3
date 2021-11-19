@@ -1,0 +1,52 @@
+package pageObjects;
+
+import java.io.IOException;
+
+import org.apache.log4j.Logger;
+import org.testng.Assert;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import reusableComponents.base;
+import uiStores.TestCaseOne;
+import uiStores.TestCaseThree;
+
+public class TestCaseThreeTesting extends base{
+	
+public static Logger log = Logger.getLogger(base.class.getName());
+	
+	@BeforeTest
+	public void browserOpen() throws IOException
+	{
+		driver=initiateDriver();
+		driver.get(prop.getProperty("url"));
+	}
+	
+	@Test
+	public void Meeting() throws InterruptedException
+	{
+		TestCaseOne t1=new TestCaseOne(driver);
+		t1.getPopup().click();
+		Thread.sleep(2000);
+		TestCaseThree t3=new TestCaseThree(driver);
+		log.info("Entered onto url");
+		t3.getExponov().click();
+		Thread.sleep(2000);
+		log.info("Clicked on Experience Novotel");
+		t3.getMeeting().click();
+		Thread.sleep(2000);
+		log.info("clicked on meetings");
+		Assert.assertTrue(driver.getTitle().contains("Meetings and Events"));
+		log.info("Title matched");
+		log.info("Testcase3 Passed successfully");
+		
+	}
+	
+	@AfterTest
+	public void closeBrowser()
+	{
+		driver.close();
+	}
+
+}

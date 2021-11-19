@@ -1,0 +1,17 @@
+package utilities;
+
+import java.io.File;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+
+public class Screenshot extends base {
+	
+	public void getScreenshot(String result) throws IOException
+	{
+		java.io.File src=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(src, new File("D:\\Selenium\\Reattempt\\Ms3-reattempt\\ScreenShot\\"+result+System.currentTimeMillis()+".png"));
+	}
+
+}

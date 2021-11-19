@@ -1,0 +1,11 @@
+package pageObjects;
+
+import java.util.logging.Logger;
+
+import reusableComponents.base;
+
+public class TestCaseTwoTesting {
+	
+	public static Logger log = Logger.getLogger(base.class.getName());
+
+}

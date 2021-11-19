@@ -1,0 +1,21 @@
+package pageObjects;
+
+import java.io.IOException;
+
+import org.apache.log4j.Logger;
+import org.testng.annotations.BeforeTest;
+
+import reusableComponents.base;
+
+public class TestCaseThreeTesting extends base{
+	
+public static Logger log = Logger.getLogger(base.class.getName());
+	
+	@BeforeTest
+	public void browserOpen() throws IOException
+	{
+		driver=initiateDriver();
+		driver.get(prop.getProperty("url"));
+	}
+
+}
